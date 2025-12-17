@@ -111,7 +111,10 @@ class Post(CreatedAtModel):
         blank=True,
         related_name='posts',
         verbose_name='Местоположение',
-        help_text='Место, к которому относится публикация (можно не указывать).',
+        help_text=(
+            'Место, к которому относится публикация '
+            '(можно не указывать).'
+        ),
     )
     is_published = models.BooleanField(
         'Опубликовано',
