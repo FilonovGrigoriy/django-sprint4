@@ -15,9 +15,11 @@ from .models import Category, Comment, Post
 
 User = get_user_model()
 
+POSTS_PER_PAGE = 10
+
 
 def paginate(request, queryset):
-    paginator = Paginator(queryset, 10)
+    paginator = Paginator(queryset, POSTS_PER_PAGE)
     page_number = request.GET.get('page')
     return paginator.get_page(page_number)
 
